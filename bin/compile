@@ -36,6 +36,8 @@ if [ -f $ENV_DIR/PROJECT_PATH ]; then
 		rm -rf $TMP_DIR
 		echo "       cleaning lib tmp dir $LIBRARY_TMP_DIR"
 		rm -rf $LIBRARY_TMP_DIR
+
+		ls $BUILD_DIR
 		exit 0
 	fi
 fi
