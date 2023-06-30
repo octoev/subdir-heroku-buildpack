@@ -8,8 +8,6 @@ BUILD_DIR=${1:-}
 CACHE_DIR=${2:-}
 ENV_DIR=${3:-}
 
-echo ls
-
 if [ -f $ENV_DIR/PROJECT_PATH ]; then
 	PROJECT_PATH=`cat $ENV_DIR/PROJECT_PATH`
 	if [ -d $BUILD_DIR/$PROJECT_PATH ]; then
@@ -21,6 +19,7 @@ if [ -f $ENV_DIR/PROJECT_PATH ]; then
 		echo "       moving working dir: $PROJECT_PATH to $TMP_DIR"
 		cp -R $BUILD_DIR/$PROJECT_PATH/. $TMP_DIR/
 		if [ -d $BUILD_DIR/$LIBRARY_PATH ]; then
+			LIBRARY_PATH=`cat $ENV_DIR/LIBRARY_PATH`
 			echo "-----> Subdir buildpack in $LIBRARY_PATH"
 			LIBRARY_TMP_DIR=`mktemp -d $CACHE_DIR/libdirXXXXX`
 			echo "       created tmp lib dir: $LIBRARY_TMP_DIR"
