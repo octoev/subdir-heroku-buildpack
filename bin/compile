@@ -30,6 +30,8 @@ if [ -f $ENV_DIR/PROJECT_PATH ]; then
 		rm -rf $BUILD_DIR/*
 		echo "       copying preserved work dir from cache $TMP_DIR to build dir $BUILD_DIR"
 		cp -R $TMP_DIR/. $BUILD_DIR/
+		echo "       copying preserved lib work dir from cache $LIBRARY_TMP_DIR to build dir $BUILD_DIR"
+		cp -R $LIBRARY_TMP_DIR/. $BUILD_DIR/
 		echo "       cleaning tmp dir $TMP_DIR"
 		rm -rf $TMP_DIR
 		echo "       cleaning lib tmp dir $LIBRARY_TMP_DIR"
