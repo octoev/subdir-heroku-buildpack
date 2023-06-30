@@ -33,6 +33,8 @@ if [ -f $ENV_DIR/PROJECT_PATH ]; then
 		cp -R $TMP_DIR/. $BUILD_DIR/
 		echo "       cleaning tmp dir $TMP_DIR"
 		rm -rf $TMP_DIR
+		echo "       cleaning lib tmp dir $LIBRARY_TMP_DIR"
+		rm -rf $LIBRARY_TMP_DIR
 		exit 0
 	fi
 fi
